@@ -1,0 +1,49 @@
+<div [innerHTML]="intro"></div>
+
+<form #form="ngForm">
+    <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Name</mat-label>
+        <input [(ngModel)]="nameValue" matInput name="name" placeholder="name" (input)="nameChanged($event)" ngModel required />
+        <mat-error *ngIf="nameFormControl.hasError('required')">
+            {{ "Field cannot be empty" }}
+        </mat-error>
+    </mat-form-field>
+    <div [innerHTML]="sectors"></div>
+    <mat-tree name="tree" placeholder="tree" [dataSource]="dataSource" [treeControl]="treeControl" class="example-tree">
+        <!-- This is the tree node template for leaf nodes -->
+        <mat-tree-node *matTreeNodeDef="let node" matTreeNodeToggle>
+            <li class="mat-tree-node">
+                <mat-checkbox class="checklist-leaf-node" (change)="itemToggle($event.checked, node)" [checked]="node.selected">{{ node.name }}</mat-checkbox>
+            </li>
+        </mat-tree-node>
+        <!-- This is the tree node template for expandable nodes -->
+        <mat-nested-tree-node *matTreeNodeDef="let node; when: hasChild">
+            <li>
+                <div class="mat-tree-node">
+                    <button mat-icon-button matTreeNodeToggle [attr.aria-label]="'toggle ' + node.name">
+            <mat-icon class="mat-icon-rtl-mirror">
+              {{
+                treeControl.isExpanded(node) ? "expand_more" : "chevron_right"
+              }}
+            </mat-icon>
+          </button>
+                    <mat-checkbox [checked]="node.selected" [indeterminate]="node.indeterminate && !node.selected" (change)="itemToggle($event.checked, node)">{{ node.name }}</mat-checkbox>
+                </div>
+                <ul [class.example-tree-invisible]="!treeControl.isExpanded(node)">
+                    <ng-container matTreeNodeOutlet></ng-container>
+                </ul>
+            </li>
+        </mat-nested-tree-node>
+    </mat-tree>
+    <mat-error *ngIf="!treeok">
+        {{ "Please select something" }}
+    </mat-error>
+    <mat-checkbox class="example-margin" required name="checkbox" placeholder="checkbox" required (change)="checkboxChanged($event)" [(ngModel)]="checked">Agree to terms</mat-checkbox>
+    <mat-error *ngIf="!checkboxok">
+        {{ "Must agree to terms" }}
+    </mat-error>
+    <br />
+    <button class="submit-button" mat-raised-button (click)="onClickSubmit()" type="submit" value="submit">
+    Save
+  </button>
+</form>

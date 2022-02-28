@@ -1,0 +1,51 @@
+.error {
+    background-color: #E91E63;
+    color: black;
+}
+
+.warning {
+    background-color: #FFFF00;
+    color: black;
+}
+
+.success {
+    background-color: #4CAF50;
+    color: black;
+}
+
+.btn {
+    display: inline-block;
+    line-height: 1;
+    white-space: nowrap;
+    cursor: pointer;
+    color: #fff;
+    -webkit-appearance: none;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    outline: 0;
+    margin: 0;
+    padding: 16px 60px;
+    font-size: 15px;
+    line-height: 15px;
+    font-weight: 400;
+    text-decoration: none;
+    border: none;
+    border-radius: 44px;
+    position: relative;
+    background: #1318C8;
+}
+
+.specific {
+    color: white;
+    background: #1318C8;
+}
+
+.switched {
+    color: #1318C8;
+    background: white;
+}
+
+.titlepos {
+    left: -15px;
+    position: relative;
+}

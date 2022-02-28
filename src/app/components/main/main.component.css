@@ -1,0 +1,46 @@
+.custom-class-example {
+    color: rgb(221, 16, 16);
+}
+
+.custom-class-example .c-token {
+    background: #38d574 !important;
+}
+
+.custom-class-example .pure-checkbox label::before {
+    border-color: #38d574 !important;
+}
+
+.custom-class-example .pure-checkbox input[type="checkbox"]:checked+label[_ngcontent-c1]:before {
+    background: #38d574 !important;
+}
+
+.example-tree-invisible {
+    display: none;
+}
+
+.example-tree ul,
+.example-tree li {
+    margin-top: 0;
+    margin-bottom: 0;
+    list-style-type: none;
+}
+
+.checklist-leaf-node {
+    padding-left: 40px;
+}
+
+.submit-button {
+    margin-top: 10px;
+}
+
+.mat-tree {
+    background: transparent;
+}
+
+::ng-deep .mat-checkbox-checked.mat-accent .mat-checkbox-background {
+    background-color: #1318C8 !important;
+}
+
+::ng-deep .mat-checkbox-indeterminate .mat-checkbox-background {
+    background-color: #1318C8 !important;
+}

@@ -1,0 +1,75 @@
+<section class="hero is-info is-fullheight is-bold">
+    <div class="register_box">
+        <mat-card class="example-card">
+            <mat-card-header>
+                <mat-card-title class="titlepos">Register</mat-card-title>
+            </mat-card-header>
+
+            <mat-card-content>
+                <form class="example-form">
+                    <table class="example-full-width" cellspacing="0">
+                        <tr>
+                            <td>
+                                <mat-form-field class="example-full-width">
+                                    <input matInput placeholder="{{ 'Username' }}" [formControl]="usernameFormControl" [errorStateMatcher]="matcher" [(ngModel)]="username" required />
+                                    <mat-error *ngIf="usernameFormControl.hasError('required')">
+                                        {{ "Field cannot be empty" }}
+                                    </mat-error>
+                                    <mat-error *ngIf="usernameFormControl.hasError('minlength')">
+                                        <span>
+                                            {{ "The minimum length is" }}
+                                            <strong>4</strong>
+                                            {{ "characters" }}
+                    </span>
+                                    </mat-error>
+                                    <mat-error *ngIf="usernameFormControl.hasError('maxlength')">
+                                        <div>
+                                            {{ "The maximum length is" }}
+                                            <strong>20</strong> {{ "characters" }}
+                                        </div>
+                                    </mat-error>
+                                </mat-form-field>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <mat-form-field class="example-full-width">
+                                    <input matInput placeholder="{{ 'Password' }}" [formControl]="passwordFormControl" [(ngModel)]="password" type="password" name="password" required />
+                                    <mat-error *ngIf="passwordFormControl.hasError('required')">
+                                        {{ "Field cannot be empty" }}
+                                    </mat-error>
+                                    <mat-error *ngIf="passwordFormControl.hasError('minlength')">
+                                        <span>
+                      {{ "The minimum length is" }}
+                      <strong>4</strong>
+                      {{ "characters" }}
+                    </span>
+                                    </mat-error>
+                                    <mat-error *ngIf="passwordFormControl.hasError('maxlength')">
+                                        <div>
+                                            {{ "The maximum length is" }}
+                                            <strong>20</strong> {{ "characters" }}
+                                        </div>
+                                    </mat-error>
+                                </mat-form-field>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                        </tr>
+                    </table>
+                </form>
+            </mat-card-content>
+
+            <mat-card-actions>
+                <button class="specific" mat-raised-button (click)="registerUser()" color="primary">
+          {{ "Register" }}
+        </button>
+                <button class="switched" mat-raised-button routerLink="/login" color="primary">
+          Login
+        </button>
+            </mat-card-actions>
+        </mat-card>
+    </div>
+</section>

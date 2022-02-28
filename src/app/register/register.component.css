@@ -1,0 +1,60 @@
+::ng-deep .warning {
+    background: "yellow";
+}
+
+.example-card {
+    padding: 50px;
+    height: 100px;
+    margin: 0 auto;
+    vertical-align: middle;
+    display: table-cell;
+    text-align: center;
+    box-shadow: 5px 3px 30px black;
+    border-radius: 20px;
+}
+
+.btn {
+    display: inline-block;
+    line-height: 1;
+    white-space: nowrap;
+    cursor: pointer;
+    color: #fff;
+    -webkit-appearance: none;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    outline: 0;
+    margin: 0;
+    padding: 16px 60px;
+    font-size: 15px;
+    line-height: 15px;
+    font-weight: 400;
+    text-decoration: none;
+    border: none;
+    border-radius: 44px;
+    position: relative;
+    background: #1318c8;
+}
+
+.register_box {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    font-size: 20px;
+    padding: 5px;
+    z-index: 100;
+}
+
+.specific {
+    color: white;
+    background: #1318c8;
+}
+
+.switched {
+    color: #1318c8;
+    background: white;
+}
